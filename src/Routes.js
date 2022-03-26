@@ -1,29 +1,43 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { SignInPage, PrivateRoute } from './auth';
-import {
-    CreateGroupPage,
-    GroupPage,
-    GroupsListPage,
-} from './groups';
-import { NavBar } from './navigation';
+// import {
+//     CreateGroupPage,
+//     GroupPage,
+//     GroupsListPage,
+// } from './groups';
+import { NavBar } from './navbar';
+import {BrowsePhotosPage} from './photos'
 
-const routes = [{
-    path: '/',
-    Component: GroupsListPage,
-    private: true,
-    exact: true,
-}, {
-    path: '/groups/:id',
-    private: true,
-    Component: GroupPage,
-}, {
+const routes = [
+//     {
+//     path: '/',
+//     Component: GroupsListPage,
+//     private: true,
+//     exact: true,
+// }, 
+// {
+//     path: '/groups/:id',
+//     private: true,
+//     Component: GroupPage,
+// },
+ {
     path: '/sign-in',
     Component: SignInPage,
-}, {
-    path: '/create-group',
+},
+//  {
+//     path: '/create-group',
+//     private: true,
+//     Component: CreateGroupPage,
+// },
+{   path:'/sign-in',
+    Component: SignInPage,
+},
+{
+    path:'/',
+    Component: BrowsePhotosPage,
+    exact:true,
     private: true,
-    Component: CreateGroupPage,
 }];
 
 export const Routes = ({ isLoading, user }) => {
